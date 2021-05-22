@@ -34,7 +34,7 @@ public class TechNewsController {
     CommentRepository commentRepository;
     @PostMapping("/users/login")
     public String login(@ModelAttribute User user, Model model, HttpServletRequest request) throws Exception {
-
+        System.out.println("In @PostMapping '/users/login' route");
         if ((user.getPassword().equals(null) || user.getPassword().isEmpty()) || (user.getEmail().equals(null) || user.getPassword().isEmpty())) {
             model.addAttribute("notice", "Email address and password must be populated in order to login!");
             return "login";

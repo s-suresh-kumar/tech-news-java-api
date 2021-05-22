@@ -32,7 +32,7 @@ public class HomePageController {
 
     @GetMapping("/login")
     public String login(Model model, HttpServletRequest request) {
-
+    System.out.println("In @GetMapping '/login'");
         if (request.getSession(false) != null) {
             return "redirect:/";
         }

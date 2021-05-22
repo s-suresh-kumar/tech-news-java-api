@@ -1,20 +1,18 @@
 package com.technews.controller;
-
-import com.technews.model.Comment;
-import com.technews.model.Post;
-import com.technews.model.User;
-import com.technews.repository.CommentRepository;
-import com.technews.repository.PostRepository;
-import com.technews.repository.UserRepository;
-import com.technews.repository.VoteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
+import com.technews.model.*;
+import com.technews.repository.*;
+import org.springframework.ui.Model;
 import javax.servlet.http.HttpServletRequest;
+
+
 import java.util.List;
+
+
 
 @Controller
 public class HomePageController {
@@ -29,10 +27,9 @@ public class HomePageController {
 
     @Autowired
     CommentRepository commentRepository;
-
     @GetMapping("/login")
     public String login(Model model, HttpServletRequest request) {
-    System.out.println("In @GetMapping '/login'");
+
         if (request.getSession(false) != null) {
             return "redirect:/";
         }

@@ -30,7 +30,6 @@ public class UserController {
         }
         return userList;
     }
-
     @GetMapping("/api/users/{id}")
     public User getUserById(@PathVariable Integer id) {
         User returnUser = repository.getOne(id);
